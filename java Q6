@@ -74,16 +74,9 @@ public class TwoRobotsWarehouse {
             }
         }
 
-        // Simplify commands using StringBuilder as a stack
-        StringBuilder simplified = new StringBuilder();
-        for (int i = 0; i < commands.length(); i++) {
-            char c = commands.charAt(i);
-            int len = simplified.length();
-
-            if (len > 0 && isOpposite(simplified.charAt(len - 1), c)) {
+               if (len > 0 && isOpposite(simplified.charAt(len - 1), c)) {
                 simplified.deleteCharAt(len - 1);
             } else {
-                simplified.append(c);
                 len = simplified.length();
                 if (len >= 4 && isTurn(c)) {
                     if (simplified.charAt(len - 1) == c &&
